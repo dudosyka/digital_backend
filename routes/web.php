@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/auth', [ \App\Http\Controllers\UserController::class, 'auth' ]);
 Route::post('/signup', [  \App\Http\Controllers\UserController::class, 'signup' ]);
+Route::post('/profile', [  \App\Http\Controllers\UserController::class, 'profile' ])->middleware(\App\Http\Middleware\Auth::class);
 
 Route::post('/products', [ \App\Http\Controllers\ProductController::class, 'getAll' ]);
 Route::post('/product', [ \App\Http\Controllers\ProductController::class, 'getOne' ]);

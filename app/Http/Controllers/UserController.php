@@ -46,6 +46,9 @@ class UserController extends Controller
     }
 
     public function profile(Request $request) {
-        return $request->user();
+        $data = $request->user()->toArray();
+        $data['api_token'] = "";
+        $data['role'] = ($data['id'] == 1) ? 'admin' : 'user';
+        return $data;
     }
 }
