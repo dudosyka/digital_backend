@@ -16,9 +16,10 @@ class ProductCategory extends Model
     public static function getProducts($category): array
     {
         $res = [];
-        foreach (self::query()->where('category_id', '=', $category)->with("product")->get()->all() as $item) {
+        foreach (self::query()->where('category_id', '=', $category)->where('num', '>', 0)->with("product")->get()->all() as $item) {
             $res[] = $item->product;
         }
         return $res;
     }
+
 }

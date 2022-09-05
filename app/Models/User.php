@@ -23,6 +23,10 @@ class User extends Model
         'name',
         'email',
         'password',
+        'surname',
+        'patronymic',
+        'login',
+        'api_token'
     ];
 
     /**
@@ -44,8 +48,16 @@ class User extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function reg($data) {
-        return User::create($data);
+    public static function reg($data) {
+        $data['api_token'] = "";
+        if ($data['password'] != $data['password_repeat']) {
+            return 'error. passwords similarity';
+        }
+        try {
+            return self::create($data);
+        } catch (\Exception $err) {
+            return $err->getPrevious()->getMessage();
+        }
     }
 
     public static function auth($login, $password): bool|string

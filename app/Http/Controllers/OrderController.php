@@ -22,7 +22,13 @@ class OrderController extends Controller
         return Order::getOrder($request->all()['oid']);
     }
 
-    public function remove(Request $request) {
-        return Order::remove($request->all()['order_id']);
+    public function remove(Request $request): string
+    {
+        return Order::removeOrder($request->user()->id, $request->all()['oid']);
+    }
+
+    public function changeStatus(Request $request): int|string
+    {
+        return Order::updateStatus($request->user()->id, $request->all()['oid'], $request->all()['status']);
     }
 }

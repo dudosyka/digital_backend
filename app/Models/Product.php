@@ -17,6 +17,10 @@ class Product extends Model
         return self::query()->where('id', '!=', 0)->get();
     }
 
+    public static function getExists() {
+        return self::query()->where('id', '!=', 0)->where('num', '>', 0)->get()->all();
+    }
+
     public static function getOne($id) {
         return self::query()->where('id', '=', $id)->get();
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Nette\Schema\ValidationException;
 
 class UserController extends Controller
 {
@@ -26,6 +27,22 @@ class UserController extends Controller
                 'errors' => []
             ]
         ]);
+    }
+
+    public function signup(Request $request) {
+//        $res = $request->validate([
+//            'name' => 'required',
+//            'surname' => 'required',
+//            'patronymic' => 'required',
+//            'login' => 'required',
+//            'email' => 'required',
+//            'password' => 'required|min:6',
+//            'password_repeat' => 'required',
+//        ]);
+//        if ($res->fails()) {
+//            dd($res);
+//        }
+        return User::reg($request->all());
     }
 
     public function profile(Request $request) {
