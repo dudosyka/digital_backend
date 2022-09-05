@@ -23,6 +23,8 @@ Route::post('/signup', [  \App\Http\Controllers\UserController::class, 'signup' 
 Route::post('/products', [ \App\Http\Controllers\ProductController::class, 'getAll' ]);
 Route::post('/product', [ \App\Http\Controllers\ProductController::class, 'getOne' ]);
 Route::post('/product/category', [ \App\Http\Controllers\ProductController::class, 'getByCategory' ]);
+Route::post('/product/remove', [ \App\Http\Controllers\ProductController::class, 'removeProduct' ])->middleware(\App\Http\Middleware\Auth::class);
+Route::post('/product/update', [ \App\Http\Controllers\ProductController::class, 'updateProduct' ])->middleware(\App\Http\Middleware\Auth::class);
 
 Route::post('/cart/add', [ \App\Http\Controllers\CartController::class, 'addProduct' ])->middleware(\App\Http\Middleware\Auth::class);
 Route::post('/cart/remove', [ \App\Http\Controllers\CartController::class, 'removeProducts' ])->middleware(\App\Http\Middleware\Auth::class);
