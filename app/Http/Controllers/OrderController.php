@@ -23,6 +23,6 @@ class OrderController extends Controller
     }
 
     public function remove(Request $request) {
-        return Order:remove($request->all()['order_id']);
+        return Order::remove($request->all()['order_id']);
     }
 }
