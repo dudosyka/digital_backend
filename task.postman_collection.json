@@ -41,6 +41,65 @@
 			"response": []
 		},
 		{
+			"name": "Reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "fdsfsd",
+							"type": "text"
+						},
+						{
+							"key": "patronymic",
+							"value": "fsdfsd",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "password_repeat",
+							"value": "dasdas",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/reg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Products by category",
 			"request": {
 				"auth": {
@@ -233,6 +292,91 @@
 					"path": [
 						"order",
 						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "68b13ec8e9fade80a32b59cafcf8874bdf58a5c9f9840bdde227b3cf14d8b813",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "oid",
+							"value": "15",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/order/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update order status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "68b13ec8e9fade80a32b59cafcf8874bdf58a5c9f9840bdde227b3cf14d8b813",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "oid",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/order/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"status"
 					]
 				}
 			},
