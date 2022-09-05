@@ -75,25 +75,94 @@
 						},
 						{
 							"key": "email",
-							"value": "login",
+							"value": "login34",
 							"type": "text"
 						},
 						{
 							"key": "password_repeat",
-							"value": "dasdas",
+							"value": "login",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/reg",
+					"raw": "http://localhost:8000/signup",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"reg"
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "68b13ec8e9fade80a32b59cafcf8874bdf58a5c9f9840bdde227b3cf14d8b813",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "fdsfsd",
+							"type": "text"
+						},
+						{
+							"key": "patronymic",
+							"value": "fsdfsd",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "login34",
+							"type": "text"
+						},
+						{
+							"key": "password_repeat",
+							"value": "login",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"profile"
 					]
 				}
 			},
@@ -173,6 +242,91 @@
 					"port": "8000",
 					"path": [
 						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product remove",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "68b13ec8e9fade80a32b59cafcf8874bdf58a5c9f9840bdde227b3cf14d8b813",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pid",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/product/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "68b13ec8e9fade80a32b59cafcf8874bdf58a5c9f9840bdde227b3cf14d8b813",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "num",
+							"value": "21",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/product/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"update"
 					]
 				}
 			},
@@ -442,7 +596,7 @@
 					"formdata": [
 						{
 							"key": "oid",
-							"value": "12",
+							"value": "15",
 							"type": "text"
 						}
 					]
